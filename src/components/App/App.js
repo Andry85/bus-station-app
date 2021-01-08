@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import styles from './App.module.scss';
 
 import Header from '../Header';
+import Main from '../Main';
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Row>
           <Col>
             <Header/>
+            <Main/>
           </Col>
         </Row>
       </Container>
