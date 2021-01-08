@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/bus-station-app/static/css/main.30e88b18.chunk.css",
+    "main.js": "/bus-station-app/static/js/main.bbf2fd5c.chunk.js",
+    "main.js.map": "/bus-station-app/static/js/main.bbf2fd5c.chunk.js.map",
+    "runtime-main.js": "/bus-station-app/static/js/runtime-main.1c048a4e.js",
+    "runtime-main.js.map": "/bus-station-app/static/js/runtime-main.1c048a4e.js.map",
+    "static/js/2.1fedec8d.chunk.js": "/bus-station-app/static/js/2.1fedec8d.chunk.js",
+    "static/js/2.1fedec8d.chunk.js.map": "/bus-station-app/static/js/2.1fedec8d.chunk.js.map",
+    "index.html": "/bus-station-app/index.html",
+    "static/css/main.30e88b18.chunk.css.map": "/bus-station-app/static/css/main.30e88b18.chunk.css.map",
+    "static/js/2.1fedec8d.chunk.js.LICENSE.txt": "/bus-station-app/static/js/2.1fedec8d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c048a4e.js",
+    "static/js/2.1fedec8d.chunk.js",
+    "static/css/main.30e88b18.chunk.css",
+    "static/js/main.bbf2fd5c.chunk.js"
+  ]
+}
