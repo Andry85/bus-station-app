@@ -9,3 +9,76 @@
 .sendBtn {
    margin-top: 30px;
 }
+
+.searchResult {
+   list-style: none;
+   margin: 100px 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   li {
+      padding: 50px 0;
+      display: flex;
+      position: relative;
+
+      &:first-child {
+         &:after {
+            background: orangered;
+         }  
+      }
+
+      &:last-child {
+         padding-bottom: 0;
+
+         &:before {
+            display: none;
+         }
+         &:after {
+            background: greenyellow;
+         }
+      }
+
+      &:before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 4px;
+         height: 100%;
+         background:  #ccc;
+      }
+
+      &:after {
+         content: '';
+         position: absolute;
+         left: -6px;
+         top: -6px;
+         width: 16px;
+         height: 16px;
+         border-radius: 50%;
+         background:  #ccc;
+         z-index: 1;
+      }
+
+      h3 {
+         font-size: 1rem;
+         position: absolute;
+         top: -20px;
+         transform: translateX(-100%);
+         padding: 10px 20px;
+         margin: 0;
+         white-space: nowrap;
+      }
+      p {
+         font-size: 1rem;
+         position: absolute;
+         top: -20px;
+         left: 20px;
+         padding: 10px;
+         margin: 0;
+         white-space: nowrap;
+      }
+   }
+}

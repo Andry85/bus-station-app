@@ -1,8 +1,12 @@
 const initialState = {
     selectedFrom: '--Choose departure station--',
     selectedTo: '--Choose destination station--',
+    selectedTime: '--Choose departure time--',
     departureList:[],
     destinationList: [],
+    weekDay: '',
+    disabledDataPicker: true,
+    path: [],
     data: [
         {
             id: 0,
@@ -67,19 +71,19 @@ const initialState = {
                             stops: [
                                 {
                                     title: 'Vinnitsia',
-                                    time: '10:00'
-                                },
-                                {
-                                    title: 'Zhitomir',
                                     time: '12:00'
                                 },
                                 {
-                                    title: 'Bila Cerkva',
+                                    title: 'Zhitomir',
                                     time: '14:00'
                                 },
                                 {
+                                    title: 'Bila Cerkva',
+                                    time: '19:00'
+                                },
+                                {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '18:00'
                                 }
                             ],
                             schedule: [
@@ -118,19 +122,19 @@ const initialState = {
                             stops: [
                                 {
                                     title: 'Vinnitsia',
-                                    time: '10:00'
+                                    time: '16:00'
                                 },
                                 {
                                     title: 'Zhitomir',
-                                    time: '12:00'
+                                    time: '18:00'
                                 },
                                 {
                                     title: 'Bila Cerkva',
-                                    time: '14:00'
+                                    time: '20:00'
                                 },
                                 {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '22:00'
                                 }
                             ],
                             schedule: [
@@ -225,19 +229,19 @@ const initialState = {
                             stops: [
                                 {
                                     title: 'Vinnitsia',
-                                    time: '10:00'
-                                },
-                                {
-                                    title: 'Zhitomir',
                                     time: '12:00'
                                 },
                                 {
-                                    title: 'Bila Cerkva',
+                                    title: 'Zhitomir',
                                     time: '14:00'
                                 },
                                 {
+                                    title: 'Bila Cerkva',
+                                    time: '18:00'
+                                },
+                                {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '20:00'
                                 }
                             ],
                             schedule: [
@@ -276,19 +280,19 @@ const initialState = {
                             stops: [
                                 {
                                     title: 'Vinnitsia',
-                                    time: '10:00'
+                                    time: '16:00'
                                 },
                                 {
                                     title: 'Zhitomir',
-                                    time: '12:00'
+                                    time: '18:00'
                                 },
                                 {
                                     title: 'Bila Cerkva',
-                                    time: '14:00'
+                                    time: '20:00'
                                 },
                                 {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '23:00'
                                 }
                             ],
                             schedule: [
@@ -495,7 +499,7 @@ const initialState = {
                             departure: '10:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
+                                    title: 'Dnipro',
                                     time: '10:00'
                                 },
                                 {
@@ -546,7 +550,7 @@ const initialState = {
                             departure: '12:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
+                                    title: 'Dnipro',
                                     time: '10:00'
                                 },
                                 {
@@ -597,7 +601,7 @@ const initialState = {
                             departure: '16:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
+                                    title: 'Dnipro',
                                     time: '10:00'
                                 },
                                 {
@@ -653,7 +657,7 @@ const initialState = {
                             departure: '10:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
+                                    title: 'Dnipro',
                                     time: '10:00'
                                 },
                                 {
@@ -704,20 +708,20 @@ const initialState = {
                             departure: '12:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
-                                    time: '10:00'
-                                },
-                                {
-                                    title: 'Zhitomir',
+                                    title: 'Dnipro',
                                     time: '12:00'
                                 },
                                 {
-                                    title: 'Bila Cerkva',
+                                    title: 'Zhitomir',
                                     time: '14:00'
                                 },
                                 {
-                                    title: 'Kiev',
+                                    title: 'Bila Cerkva',
                                     time: '16:00'
+                                },
+                                {
+                                    title: 'Kiev',
+                                    time: '18:00'
                                 }
                             ],
                             schedule: [
@@ -755,20 +759,20 @@ const initialState = {
                             departure: '16:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
-                                    time: '10:00'
+                                    title: 'Dnipro',
+                                    time: '16:00'
                                 },
                                 {
                                     title: 'Zhitomir',
-                                    time: '12:00'
+                                    time: '18:00'
                                 },
                                 {
                                     title: 'Bila Cerkva',
-                                    time: '14:00'
+                                    time: '20:00'
                                 },
                                 {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '22:00'
                                 }
                             ],
                             schedule: [
@@ -808,11 +812,11 @@ const initialState = {
                     destination: 'Donetsk',
                     trip:  [
                         {
-                            departure: '10:00',
+                            departure: '09:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
-                                    time: '10:00'
+                                    title: 'Dnipro',
+                                    time: '09:00'
                                 },
                                 {
                                     title: 'Zhitomir',
@@ -913,20 +917,20 @@ const initialState = {
                             departure: '18:00',
                             stops: [
                                 {
-                                    title: 'Vinnitsia',
-                                    time: '10:00'
+                                    title: 'Dnipro',
+                                    time: '18:00'
                                 },
                                 {
                                     title: 'Zhitomir',
-                                    time: '12:00'
+                                    time: '19:00'
                                 },
                                 {
                                     title: 'Bila Cerkva',
-                                    time: '14:00'
+                                    time: '22:00'
                                 },
                                 {
                                     title: 'Kiev',
-                                    time: '16:00'
+                                    time: '23:00'
                                 }
                             ],
                             schedule: [

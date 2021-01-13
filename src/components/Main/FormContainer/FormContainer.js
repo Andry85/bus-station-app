@@ -11,6 +11,11 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import {changeFrom} from '../../../redux/actions'; 
 import {changeTo} from '../../../redux/actions'; 
+import {changeDate} from '../../../redux/actions'; 
+import {changeTime} from '../../../redux/actions'; 
+import {changePath} from '../../../redux/actions';
+
+
 
 
 
@@ -53,8 +58,14 @@ function FormContainer() {
                 <Form.Label className={styles.datapicerLabel}  htmlFor="datapicker">Select Date:</Form.Label>
                 <DatePicker
                   id="datapicker" 
-                  selected={startDate} 
-                  onChange={date => setStartDate(date)}
+                  selected={startDate}
+                  // disabled={state.disabledDataPicker} 
+                  onChange={date => {
+                    setStartDate(date);
+                    dispatch(changeDate(date));
+                  }
+                   
+                  }
                  />
               </Form.Group>
             </Col>
@@ -63,7 +74,7 @@ function FormContainer() {
             <Col md={6}>
               <Form.Group controlId="time-select">
                 <Form.Label>Time:</Form.Label>
-                <Form.Control as="select" custom>
+                <Form.Control as="select" value={state.selectedTime} onChange={(event) => dispatch(changeTime(event.target.value))}>
                   <option>--Choose departure time--</option>
                   {state.departureList.map((option, index) => (
                       <option key={index} value={option}>{option}</option>
@@ -74,6 +85,11 @@ function FormContainer() {
             <Col md={6}>
             <Button
               className={styles.sendBtn} 
+              onClick={(event) => {
+                  event.preventDefault();
+                  dispatch(changePath())
+                }
+              }
               variant="primary" 
               type="submit">
                 Search
@@ -81,6 +97,18 @@ function FormContainer() {
             </Col>
         </Row>
       </Form>
+
+      {state.path.stops &&
+        <ul className={styles.searchResult}>
+          {state.path.stops.map((item, index) => (
+              <li>
+                <h3>{item.title}</h3>
+                <p>{item.time}</p>
+              </li>
+          ))}
+        </ul>
+        
+      }
     </div>
   );
 }
