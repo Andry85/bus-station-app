@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import DatePicker from "react-datepicker";
 import Row from 'react-bootstrap/Row';
@@ -26,6 +26,13 @@ function FormContainer() {
 
   const [startDate, setStartDate] = useState(new Date());
 
+  let isDisabled = true;
+
+  if (state.selectedFrom && state.selectedTo && state.selectedTime && state.weekDay) {
+    isDisabled = false;
+  }
+
+
 
   return (
     <div className={styles.form}>
@@ -35,7 +42,7 @@ function FormContainer() {
                 <Form.Group controlId="from-select">
                   <Form.Label>From:</Form.Label>
                   <Form.Control as="select" value={state.selectedFrom} onChange={(event) => dispatch(changeFrom(event.target.value))}>
-                  <option>--Choose departure station--</option>
+                  <option value=''>--Choose departure station--</option>
                     {state.data.map((option) => (
                       <option key={option.id} value={option.from}>{option.from}</option>
                     ))}
@@ -46,7 +53,7 @@ function FormContainer() {
               <Form.Group controlId="to-select">
                 <Form.Label>To</Form.Label>
                 <Form.Control as="select" value={state.selectedTo} onChange={(event) => dispatch(changeTo(event.target.value))}>
-                <option>--Choose destination station--</option>
+                <option value=''>--Choose destination station--</option>
                   {state.destinationList.map((option, index) => (
                       <option key={index} value={option}>{option}</option>
                   ))}
@@ -59,10 +66,10 @@ function FormContainer() {
                 <DatePicker
                   id="datapicker" 
                   selected={startDate}
-                  // disabled={state.disabledDataPicker} 
                   onChange={date => {
                     setStartDate(date);
                     dispatch(changeDate(date));
+                    
                   }
                    
                   }
@@ -75,7 +82,7 @@ function FormContainer() {
               <Form.Group controlId="time-select">
                 <Form.Label>Time:</Form.Label>
                 <Form.Control as="select" value={state.selectedTime} onChange={(event) => dispatch(changeTime(event.target.value))}>
-                  <option>--Choose departure time--</option>
+                  <option value=''>--Choose departure time--</option>
                   {state.departureList.map((option, index) => (
                       <option key={index} value={option}>{option}</option>
                   ))}
@@ -85,6 +92,7 @@ function FormContainer() {
             <Col md={6}>
             <Button
               className={styles.sendBtn} 
+              disabled={isDisabled}
               onClick={(event) => {
                   event.preventDefault();
                   dispatch(changePath())
@@ -98,7 +106,9 @@ function FormContainer() {
         </Row>
       </Form>
 
-      {state.path.stops &&
+    
+
+      {state.path.dayOn &&
         <ul className={styles.searchResult}>
           {state.path.stops.map((item, index) => (
               <li>
@@ -107,8 +117,12 @@ function FormContainer() {
               </li>
           ))}
         </ul>
-        
       }
+
+      {state.path.dayOff &&
+        <p className={styles.dayOffClass}>There is not a departure at {state.weekDay}</p>
+      }
+
     </div>
   );
 }

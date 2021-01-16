@@ -1,10 +1,23 @@
+var d = new Date();
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+
+
+
 const initialState = {
-    selectedFrom: '--Choose departure station--',
-    selectedTo: '--Choose destination station--',
-    selectedTime: '--Choose departure time--',
+    selectedFrom: '',
+    selectedTo: '',
+    selectedTime: '',
     departureList:[],
     destinationList: [],
-    weekDay: '',
+    weekDay: weekday[d.getDay()],
     disabledDataPicker: true,
     path: [],
     data: [
@@ -93,11 +106,11 @@ const initialState = {
                                 },
                                 {
                                     dayOfWeek: 'Tuesday',
-                                    status: true
+                                    status: false
                                 },
                                 {
                                     dayOfWeek: 'Wednesday',
-                                    status: false
+                                    status: true
                                 },
                                 {
                                     dayOfWeek: 'Thursday',
@@ -109,7 +122,7 @@ const initialState = {
                                 },
                                 {
                                     dayOfWeek: 'Saturday',
-                                    status: false
+                                    status: true
                                 },
                                 {
                                     dayOfWeek: 'Sunday',
