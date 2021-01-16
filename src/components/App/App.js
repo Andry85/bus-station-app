@@ -8,6 +8,7 @@ import styles from './App.module.scss';
 
 import Header from '../Header';
 import Main from '../Main';
+import Footer from "../Footer";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Col>
             <Header/>
             <Main/>
+            <Footer text="Copyright 2021 © Bus Station App. All Rights Reserved." />
           </Col>
         </Row>
       </Container>
