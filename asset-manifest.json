@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/bus-station-app/static/css/main.e4bf4513.chunk.css",
-    "main.js": "/bus-station-app/static/js/main.11559c7d.chunk.js",
-    "main.js.map": "/bus-station-app/static/js/main.11559c7d.chunk.js.map",
+    "main.css": "/bus-station-app/static/css/main.bec84e38.chunk.css",
+    "main.js": "/bus-station-app/static/js/main.3a15d63a.chunk.js",
+    "main.js.map": "/bus-station-app/static/js/main.3a15d63a.chunk.js.map",
     "runtime-main.js": "/bus-station-app/static/js/runtime-main.1c048a4e.js",
     "runtime-main.js.map": "/bus-station-app/static/js/runtime-main.1c048a4e.js.map",
     "static/css/2.95456d05.chunk.css": "/bus-station-app/static/css/2.95456d05.chunk.css",
-    "static/js/2.5fdfed13.chunk.js": "/bus-station-app/static/js/2.5fdfed13.chunk.js",
-    "static/js/2.5fdfed13.chunk.js.map": "/bus-station-app/static/js/2.5fdfed13.chunk.js.map",
+    "static/js/2.3ae00a40.chunk.js": "/bus-station-app/static/js/2.3ae00a40.chunk.js",
+    "static/js/2.3ae00a40.chunk.js.map": "/bus-station-app/static/js/2.3ae00a40.chunk.js.map",
     "index.html": "/bus-station-app/index.html",
     "static/css/2.95456d05.chunk.css.map": "/bus-station-app/static/css/2.95456d05.chunk.css.map",
-    "static/css/main.e4bf4513.chunk.css.map": "/bus-station-app/static/css/main.e4bf4513.chunk.css.map",
-    "static/js/2.5fdfed13.chunk.js.LICENSE.txt": "/bus-station-app/static/js/2.5fdfed13.chunk.js.LICENSE.txt"
+    "static/css/main.bec84e38.chunk.css.map": "/bus-station-app/static/css/main.bec84e38.chunk.css.map",
+    "static/js/2.3ae00a40.chunk.js.LICENSE.txt": "/bus-station-app/static/js/2.3ae00a40.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1c048a4e.js",
     "static/css/2.95456d05.chunk.css",
-    "static/js/2.5fdfed13.chunk.js",
-    "static/css/main.e4bf4513.chunk.css",
-    "static/js/main.11559c7d.chunk.js"
+    "static/js/2.3ae00a40.chunk.js",
+    "static/css/main.bec84e38.chunk.css",
+    "static/js/main.3a15d63a.chunk.js"
   ]
 }
