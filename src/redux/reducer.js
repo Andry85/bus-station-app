@@ -30,6 +30,8 @@ const reducer = (state = initialState, action) => {
                 selectedFrom: action.value,
                 destinationList: [],
                 departureList: [],
+                selectedTime: '',
+                selectedTo: '',
                 path: {
                     stops: []
                 }
@@ -56,6 +58,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selectedTo: action.value,
                 departureList: [],
+                selectedTime: '',
                 path: {
                     stops: []
                 }
@@ -89,7 +92,7 @@ const reducer = (state = initialState, action) => {
                     break; 
                 case 6:
                     dayOf = 'Saturday'
-                    break; 
+                    break;
             }
 
             return {
@@ -116,11 +119,11 @@ const reducer = (state = initialState, action) => {
 
             let isWorking = true;
 
-            {shedulesList.map((item, index) => {
+            shedulesList.map((item) => {
                 if (item.dayOfWeek === state.weekDay && item.status === false) {
                     isWorking = false;
                 }
-            })}
+            })
 
 
             let dayOn = false;

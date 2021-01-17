@@ -64,6 +64,7 @@ function FormContainer() {
               <Form.Group>
                 <Form.Label className={styles.datapicerLabel}  htmlFor="datapicker">Select Date:</Form.Label>
                 <DatePicker
+                  className={styles.datapicker}
                   id="datapicker" 
                   selected={startDate}
                   onChange={date => {
@@ -78,7 +79,7 @@ function FormContainer() {
             </Col>
         </Row>
         <Row>
-            <Col md={6}>
+            <Col md={4}>
               <Form.Group controlId="time-select">
                 <Form.Label>Time:</Form.Label>
                 <Form.Control as="select" value={state.selectedTime} onChange={(event) => dispatch(changeTime(event.target.value))}>
@@ -89,7 +90,7 @@ function FormContainer() {
                 </Form.Control>
               </Form.Group>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
             <Button
               className={styles.sendBtn} 
               disabled={isDisabled}
@@ -120,7 +121,7 @@ function FormContainer() {
       }
 
       {state.path.dayOff &&
-        <p className={styles.dayOffClass}>There is not a departure at {state.weekDay}</p>
+        <p className={styles.dayOffClass}>There is not a departure on {state.weekDay}.</p>
       }
 
     </div>
